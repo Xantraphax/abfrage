@@ -5,9 +5,25 @@ function parseXML(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
   const rows = Array.from(xmlDoc.getElementsByTagName("row"));
-  return rows.map(row => {
-    return Array.from(row.getElementsByTagName("cell")).map(cell => cell.textContent);
+
+  const data = [];
+  const inputMap = [];
+
+  rows.forEach(row => {
+    const cells = Array.from(row.getElementsByTagName("cell"));
+    const dataRow = [];
+    const inputRow = [];
+
+    cells.forEach(cell => {
+      dataRow.push(cell.textContent);
+      inputRow.push(cell.getAttribute("input") === "true");
+    });
+
+    data.push(dataRow);
+    inputMap.push(inputRow);
   });
+
+  return { data, inputMap };
 }
 
 function parseJSON(jsonText) {
@@ -73,24 +89,20 @@ document.getElementById("loadButton").addEventListener("click", () => {
   const reader = new FileReader();
 
   reader.onload = (e) => {
-    let data;
     if (file.name.endsWith(".xml")) {
-      data = parseXML(e.target.result);
+      const result = parseXML(e.target.result);
+      correctData = result.data;
+      inputFields = result.inputMap;
     } else if (file.name.endsWith(".json")) {
-      data = parseJSON(e.target.result);
+      const result = parseJSON(e.target.result);
+      correctData = result.data;
+      inputFields = result.inputMap;
     } else {
       alert("Nur .json oder .xml Dateien erlaubt.");
       return;
     }
 
-    correctData = data;
-
-    // Beispielhafte Definition der Eingabefelder: Alles false außer gezielte Zellen
-    inputFields = data.map(row => row.map(() => false));
-    if (data.length > 1 && data[1].length > 1) inputFields[1][1] = true; // Beispiel: Alter bei Anna
-    if (data.length > 2 && data[2].length > 2) inputFields[2][2] = true; // Beispiel: Stadt bei Ben
-
-    renderTable(data, inputFields);
+    renderTable(correctData, inputFields);
   };
 
   reader.readAsText(file);
