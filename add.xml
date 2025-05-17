@@ -1,13 +1,11 @@
 <imageTask>
   <image src="add.png" />
 
-  <!-- Eingabefelder -->
-  <field x="45" y="75" width="30" height="20" solution="1" /> <!-- Eingang A -->
-  <field x="45" y="125" width="30" height="20" solution="0" /> <!-- Eingang B -->
+  <!-- Links: Eingänge -->
+  <field x="6%" y="14%" width="4%" height="3%" solution="1" />
+  <field x="6%" y="24%" width="4%" height="3%" solution="0" />
 
-  <!-- Ausgabe XOR (Summe) -->
-  <field x="480" y="85" width="30" height="20" solution="1" />
-
-  <!-- Ausgabe AND (Carry) -->
-  <field x="480" y="340" width="30" height="20" solution="0" />
+  <!-- Rechts: Ausgänge -->
+  <field x="62%" y="17%" width="4%" height="3%" solution="1" />
+  <field x="62%" y="67%" width="4%" height="3%" solution="0" />
 </imageTask>
