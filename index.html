@@ -51,32 +51,41 @@
     // Automatisches Laden bei auto=true
     const autoLoad = getParam("auto") === "true";
     const filePath = getParam("file");
+    const mode = getParam("mode");
 
     if (autoLoad && filePath) {
+      const mode = new URLSearchParams(window.location.search).get("mode");
+    
       fetch(filePath)
         .then(response => {
           if (!response.ok) throw new Error("Datei konnte nicht geladen werden.");
           return response.text();
         })
         .then(text => {
-          let result;
           if (filePath.endsWith(".xml")) {
-            result = parseXML(text);
+            if (mode === "bild") {
+              renderImageMode(text); // Bildmodus aktiv
+            } else {
+              const result = parseXML(text);
+              correctData = result.data;
+              inputFields = result.inputMap;
+              renderTable(correctData, inputFields);
+            }
           } else if (filePath.endsWith(".json")) {
-            result = parseJSON(text);
+            const result = parseJSON(text);
+            correctData = result.data;
+            inputFields = result.inputMap;
+            renderTable(correctData, inputFields);
           } else {
             throw new Error("Nur .json oder .xml wird unterstützt.");
           }
-
-          correctData = result.data;
-          inputFields = result.inputMap;
-          renderTable(correctData, inputFields);
         })
         .catch(err => {
           const container = document.getElementById("tableContainer");
           container.innerHTML = `<p style="color: red;">Fehler beim Laden: ${err.message}</p>`;
         });
     }
+
   </script>
 </body>
 </html>
