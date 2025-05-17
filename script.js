@@ -128,25 +128,25 @@ function fetchAndLoadFile(filePath) {
 function renderImageMode(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-  
+
   const image = xmlDoc.getElementsByTagName("image")[0];
   const fields = Array.from(xmlDoc.getElementsByTagName("field"));
-  
+
   const imageContainer = document.getElementById("imageContainer");
   const img = document.getElementById("taskImage");
   img.src = image.getAttribute("src");
 
-  // Leere vorherige Inputs
+  // Leere alte Inputs
   imageContainer.querySelectorAll("input").forEach(input => input.remove());
 
   correctData = [];
   inputFields = [];
 
   fields.forEach((field, index) => {
-    const x = parseInt(field.getAttribute("x"));
-    const y = parseInt(field.getAttribute("y"));
-    const width = parseInt(field.getAttribute("width"));
-    const height = parseInt(field.getAttribute("height"));
+    const x = field.getAttribute("x");
+    const y = field.getAttribute("y");
+    const width = field.getAttribute("width");
+    const height = field.getAttribute("height");
     const solution = field.getAttribute("solution");
 
     correctData[index] = [solution];
@@ -154,19 +154,23 @@ function renderImageMode(xmlText) {
 
     const input = document.createElement("input");
     input.type = "text";
-    input.style.left = `${x}px`;
-    input.style.top = `${y}px`;
-    input.style.width = `${width}px`;
-    input.style.height = `${height}px`;
     input.classList.add("image-input");
     input.dataset.row = index;
     input.dataset.cell = 0;
+
+    // Prozentuale Positionierung
+    input.style.left = x;
+    input.style.top = y;
+    input.style.width = width;
+    input.style.height = height;
+
     imageContainer.appendChild(input);
   });
 
   imageContainer.classList.remove("hidden");
   document.getElementById("checkButton").classList.remove("hidden");
 }
+
 
 // Event Listener
 
