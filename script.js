@@ -4,8 +4,14 @@ let inputFields = [];
 function parseXML(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-  const rows = Array.from(xmlDoc.getElementsByTagName("row"));
 
+  // Bildmodus?
+  if (xmlDoc.getElementsByTagName("imageTask").length > 0) {
+    return { mode: "bild", xmlDoc };
+  }
+
+  // Tabellenmodus
+  const rows = Array.from(xmlDoc.getElementsByTagName("row"));
   const data = [];
   const inputMap = [];
 
@@ -23,11 +29,12 @@ function parseXML(xmlText) {
     inputMap.push(inputRow);
   });
 
-  return { data, inputMap };
+  return { data, inputMap, mode: "table" };
 }
 
 function parseJSON(jsonText) {
-  return JSON.parse(jsonText);
+  const obj = JSON.parse(jsonText);
+  return { data: obj.data, inputMap: obj.inputMap, mode: "table" };
 }
 
 function renderTable(data, inputFields) {
@@ -56,79 +63,10 @@ function renderTable(data, inputFields) {
 
   container.appendChild(table);
   document.getElementById("checkButton").classList.remove("hidden");
+  document.getElementById("feedback").classList.add("hidden");
 }
 
-function checkInputs() {
-  const inputs = document.querySelectorAll("input[type='text']");
-  let allCorrect = true;
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const individualFeedback = urlParams.get("feedback") === "individual";
-
-  inputs.forEach(input => {
-    const row = parseInt(input.dataset.row);
-    const cell = parseInt(input.dataset.cell);
-    const value = input.value.trim();
-    const isCorrect = value === correctData[row][cell];
-
-    if (!isCorrect) {
-      allCorrect = false;
-    }
-
-    // Setze farbliche Rückmeldung pro Feld, nur wenn gewünscht
-    if (individualFeedback) {
-      input.classList.remove("input-correct", "input-wrong");
-      input.classList.add(isCorrect ? "input-correct" : "input-wrong");
-    } else {
-      input.classList.remove("input-correct", "input-wrong");
-    }
-  });
-
-  const feedback = document.getElementById("feedback");
-  feedback.classList.remove("hidden", "success", "error");
-  feedback.classList.add(allCorrect ? "success" : "error");
-  feedback.textContent = allCorrect
-    ? "Alle Eingaben sind korrekt!"
-    : "Ein oder mehrere Eingaben sind falsch.";
-}
-
-
-function getURLParams() {
-  const params = new URLSearchParams(window.location.search);
-  return {
-    enableUpload: params.get("upload") === "true",
-    autoLoad: params.get("auto") === "true",
-    filePath: params.get("file")
-  };
-}
-
-function fetchAndLoadFile(filePath) {
-  fetch(filePath)
-    .then(res => res.text())
-    .then(text => {
-      let result;
-      if (filePath.endsWith(".xml")) {
-        result = parseXML(text);
-      } else if (filePath.endsWith(".json")) {
-        result = parseJSON(text);
-      } else {
-        alert("Nur .json oder .xml Dateien erlaubt.");
-        return;
-      }
-      correctData = result.data;
-      inputFields = result.inputMap;
-      renderTable(correctData, inputFields);
-    })
-    .catch(err => {
-      console.error("Fehler beim Laden der Datei:", err);
-      alert("Fehler beim Laden der Datei. Bitte Pfad überprüfen.");
-    });
-}
-
-function renderImageMode(xmlText) {
-  const parser = new DOMParser();
-  const xmlDoc = parser.parseFromString(xmlText, "text/xml");
-
+function renderImageMode(xmlDoc) {
   const image = xmlDoc.getElementsByTagName("image")[0];
   const fields = Array.from(xmlDoc.getElementsByTagName("field"));
 
@@ -136,7 +74,7 @@ function renderImageMode(xmlText) {
   const img = document.getElementById("taskImage");
   img.src = image.getAttribute("src");
 
-  // Leere alte Inputs
+  // Alte Inputs löschen
   imageContainer.querySelectorAll("input").forEach(input => input.remove());
 
   correctData = [];
@@ -158,7 +96,6 @@ function renderImageMode(xmlText) {
     input.dataset.row = index;
     input.dataset.cell = 0;
 
-    // Prozentuale Positionierung
     input.style.left = x;
     input.style.top = y;
     input.style.width = width;
@@ -169,10 +106,43 @@ function renderImageMode(xmlText) {
 
   imageContainer.classList.remove("hidden");
   document.getElementById("checkButton").classList.remove("hidden");
+  document.getElementById("feedback").classList.add("hidden");
 }
 
+function checkInputs() {
+  const inputs = document.querySelectorAll("input[type='text']");
+  let allCorrect = true;
 
-// Event Listener
+  const individualFeedback =
+    new URLSearchParams(window.location.search).get("feedback") === "individual";
+
+  inputs.forEach(input => {
+    const row = parseInt(input.dataset.row);
+    const cell = parseInt(input.dataset.cell);
+    const value = input.value.trim();
+    const correct = correctData[row][cell];
+    const isCorrect = value === correct;
+
+    if (!isCorrect) {
+      allCorrect = false;
+    }
+
+    if (individualFeedback) {
+      input.style.backgroundColor = isCorrect ? "#c8f7c5" : "#f7c5c5";
+    } else {
+      input.style.backgroundColor = "";
+    }
+  });
+
+  const feedback = document.getElementById("feedback");
+  feedback.classList.remove("hidden", "success", "error");
+  feedback.classList.add(allCorrect ? "success" : "error");
+  feedback.textContent = allCorrect
+    ? "Alle Eingaben sind korrekt!"
+    : "Ein oder mehrere Eingaben sind falsch.";
+}
+
+// === EVENT LISTENER ===
 
 document.getElementById("loadButton").addEventListener("click", () => {
   const fileInput = document.getElementById("fileInput");
@@ -182,20 +152,24 @@ document.getElementById("loadButton").addEventListener("click", () => {
   const reader = new FileReader();
 
   reader.onload = (e) => {
+    let result;
     if (file.name.endsWith(".xml")) {
-      const result = parseXML(e.target.result);
-      correctData = result.data;
-      inputFields = result.inputMap;
+      result = parseXML(e.target.result);
+      if (result.mode === "bild") {
+        renderImageMode(result.xmlDoc);
+      } else {
+        correctData = result.data;
+        inputFields = result.inputMap;
+        renderTable(correctData, inputFields);
+      }
     } else if (file.name.endsWith(".json")) {
-      const result = parseJSON(e.target.result);
+      result = parseJSON(e.target.result);
       correctData = result.data;
       inputFields = result.inputMap;
+      renderTable(correctData, inputFields);
     } else {
       alert("Nur .json oder .xml Dateien erlaubt.");
-      return;
     }
-
-    renderTable(correctData, inputFields);
   };
 
   reader.readAsText(file);
@@ -203,16 +177,40 @@ document.getElementById("loadButton").addEventListener("click", () => {
 
 document.getElementById("checkButton").addEventListener("click", checkInputs);
 
-// Initial Setup je nach URL-Parameter
-window.addEventListener("DOMContentLoaded", () => {
-  const { enableUpload, autoLoad, filePath } = getURLParams();
+// === AUTOMATISCHES LADEN ===
 
-  const uploadSection = document.getElementById("uploadSection");
-  if (!enableUpload && uploadSection) {
-    uploadSection.style.display = "none";
-  }
+const urlParams = new URLSearchParams(window.location.search);
+const autoLoad = urlParams.get("auto") === "true";
+const filePath = urlParams.get("file");
+const mode = urlParams.get("mode");
 
-  if (autoLoad && filePath) {
-    fetchAndLoadFile(filePath);
-  }
-});
+if (autoLoad && filePath) {
+  fetch(filePath)
+    .then(response => {
+      if (!response.ok) throw new Error("Datei konnte nicht geladen werden.");
+      return response.text();
+    })
+    .then(text => {
+      if (filePath.endsWith(".xml")) {
+        const result = parseXML(text);
+        if (result.mode === "bild") {
+          renderImageMode(result.xmlDoc);
+        } else {
+          correctData = result.data;
+          inputFields = result.inputMap;
+          renderTable(correctData, inputFields);
+        }
+      } else if (filePath.endsWith(".json")) {
+        const result = parseJSON(text);
+        correctData = result.data;
+        inputFields = result.inputMap;
+        renderTable(correctData, inputFields);
+      } else {
+        throw new Error("Nur .json oder .xml wird unterstützt.");
+      }
+    })
+    .catch(err => {
+      const container = document.getElementById("tableContainer");
+      container.innerHTML = `<p style="color: red;">Fehler beim Laden: ${err.message}</p>`;
+    });
+}
