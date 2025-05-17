@@ -79,3 +79,15 @@ input[type="text"] {
 .hidden {
   display: none;
 }
+
+.input-correct {
+  background-color: #d4edda; /* hellgrün */
+  border: 1px solid #28a745;
+  color: #155724;
+}
+
+.input-wrong {
+  background-color: #f8d7da; /* hellrot */
+  border: 1px solid #dc3545;
+  color: #721c24;
+}
