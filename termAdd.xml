@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="Terme Addierer.png" />
+  <field x="2.65%" y="66.66%" width="2.82%" height="13.79%" solution="0" />
+  <field x="6.81%" y="67.03%" width="2.75%" height="13.06%" solution="0" />
+  <field x="20.54%" y="66.30%" width="2.43%" height="11.61%" solution="0" />
+  <field x="25.01%" y="66.66%" width="2.43%" height="10.89%" solution="1" />
+  <field x="39.13%" y="67.39%" width="2.43%" height="10.89%" solution="0" />
+  <field x="44.17%" y="68.19%" width="2.51%" height="10.89%" solution="1" />
+  <field x="58.21%" y="68.91%" width="2.43%" height="11.25%" solution="1" />
+  <field x="63.55%" y="68.91%" width="2.43%" height="10.89%" solution="0" />
+</imageTask>
