@@ -7,8 +7,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <h1>Lernapplet: Tabelle aus Datei</h1>
-
+  <div id="headline" style="display: none;">
+    <h1>Lernapplet: Tabelle aus Datei</h1>
+  </div>
   <!-- Datei laden nur bei upload=true -->
   <div id="uploadSection" style="display: none;">
     <input type="file" id="fileInput" accept=".json, .xml" />
@@ -34,6 +35,12 @@
     const showUpload = getParam("upload") === "true";
     if (showUpload) {
       document.getElementById("uploadSection").style.display = "block";
+    }
+    
+    // Steuere Sichtbarkeit von der Überschrift
+    const showHeadline = getParam("headline") === "true";
+    if (showHeadline) {
+      document.getElementById("headline").style.display = "block";
     }
 
     // Automatisches Laden bei auto=true
