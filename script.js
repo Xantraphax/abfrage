@@ -79,6 +79,38 @@ function checkInputs() {
     : "Ein oder mehrere Eingaben sind falsch.";
 }
 
+function getURLParams() {
+  const params = new URLSearchParams(window.location.search);
+  return {
+    enableUpload: params.get("upload") === "true",
+    autoLoad: params.get("auto") === "true",
+    filePath: params.get("file")
+  };
+}
+
+function fetchAndLoadFile(filePath) {
+  fetch(filePath)
+    .then(res => res.text())
+    .then(text => {
+      let result;
+      if (filePath.endsWith(".xml")) {
+        result = parseXML(text);
+      } else if (filePath.endsWith(".json")) {
+        result = parseJSON(text);
+      } else {
+        alert("Nur .json oder .xml Dateien erlaubt.");
+        return;
+      }
+      correctData = result.data;
+      inputFields = result.inputMap;
+      renderTable(correctData, inputFields);
+    })
+    .catch(err => {
+      console.error("Fehler beim Laden der Datei:", err);
+      alert("Fehler beim Laden der Datei. Bitte Pfad überprüfen.");
+    });
+}
+
 // Event Listener
 
 document.getElementById("loadButton").addEventListener("click", () => {
@@ -109,3 +141,17 @@ document.getElementById("loadButton").addEventListener("click", () => {
 });
 
 document.getElementById("checkButton").addEventListener("click", checkInputs);
+
+// Initial Setup je nach URL-Parameter
+window.addEventListener("DOMContentLoaded", () => {
+  const { enableUpload, autoLoad, filePath } = getURLParams();
+
+  const uploadSection = document.getElementById("uploadSection");
+  if (!enableUpload && uploadSection) {
+    uploadSection.style.display = "none";
+  }
+
+  if (autoLoad && filePath) {
+    fetchAndLoadFile(filePath);
+  }
+});
