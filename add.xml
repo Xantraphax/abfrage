@@ -1,11 +1,10 @@
 <imageTask>
   <image src="add.png" />
 
-  <!-- Links: Eingänge -->
-  <field x="6%" y="14%" width="4%" height="3%" solution="1" />
-  <field x="6%" y="24%" width="4%" height="3%" solution="0" />
-
-  <!-- Rechts: Ausgänge -->
-  <field x="62%" y="17%" width="4%" height="3%" solution="1" />
-  <field x="62%" y="67%" width="4%" height="3%" solution="0" />
+  <field x="20.06%" y="18.11%" width="4.36%" height="7.05%" solution="1" />
+  <field x="65.30%" y="16.80%" width="6.52%" height="7.76%" solution="3" />
+  <field x="20.06%" y="29.66%" width="4.50%" height="6.95%" solution="2" />
+  <field x="20.19%" y="58.13%" width="4.16%" height="6.74%" solution="4" />
+  <field x="20.33%" y="70.48%" width="4.43%" height="5.93%" solution="6" />
+  <field x="65.44%" y="53.47%" width="6.19%" height="6.64%" solution="5" />
 </imageTask>
