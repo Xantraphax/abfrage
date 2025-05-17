@@ -62,12 +62,25 @@ function checkInputs() {
   const inputs = document.querySelectorAll("input[type='text']");
   let allCorrect = true;
 
+  const urlParams = new URLSearchParams(window.location.search);
+  const individualFeedback = urlParams.get("feedback") === "individual";
+
   inputs.forEach(input => {
     const row = parseInt(input.dataset.row);
     const cell = parseInt(input.dataset.cell);
     const value = input.value.trim();
-    if (value !== correctData[row][cell]) {
+    const isCorrect = value === correctData[row][cell];
+
+    if (!isCorrect) {
       allCorrect = false;
+    }
+
+    // Setze farbliche Rückmeldung pro Feld, nur wenn gewünscht
+    if (individualFeedback) {
+      input.classList.remove("input-correct", "input-wrong");
+      input.classList.add(isCorrect ? "input-correct" : "input-wrong");
+    } else {
+      input.classList.remove("input-correct", "input-wrong");
     }
   });
 
@@ -78,6 +91,7 @@ function checkInputs() {
     ? "Alle Eingaben sind korrekt!"
     : "Ein oder mehrere Eingaben sind falsch.";
 }
+
 
 function getURLParams() {
   const params = new URLSearchParams(window.location.search);
