@@ -1,5 +1,5 @@
 <imageTask>
-  <image src="A_2D_digital_diagram_illustrates_a_half-adder_circ.png" />
+  <image src="add.png" />
 
   <!-- Eingabefelder -->
   <field x="45" y="75" width="30" height="20" solution="1" /> <!-- Eingang A -->
