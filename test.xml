@@ -1,6 +1,6 @@
 <root>
   <row>
-    <cell input="false">Name <br></cell>
+    <cell input="false">Name</cell>
     <cell input="false">Alter</cell>
     <cell input="false">Stadt</cell>
   </row>
