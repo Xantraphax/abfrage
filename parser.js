@@ -1,4 +1,3 @@
-// parser.js
 import { getParam } from './utils.js';
 
 export function parseXML(xmlText) {
@@ -10,6 +9,8 @@ export function parseXML(xmlText) {
   const inputMap = [];
   const distractorMap = [];
 
+  const useDropdown = getParam("inputType") === "dropdown";
+
   rows.forEach((row, rowIndex) => {
     const cells = Array.from(row.getElementsByTagName("cell"));
     const dataRow = [];
@@ -18,15 +19,15 @@ export function parseXML(xmlText) {
 
     cells.forEach(cell => {
       const isInput = cell.getAttribute("input") === "true";
-      const solution = cell.getAttribute("solution");
-      const distractors = Array.from(cell.getElementsByTagName("distractor")).map(d => d.textContent);
+      const solution = cell.getAttribute("solution")?.trim() || "";
+      const distractors = Array.from(cell.getElementsByTagName("distractor")).map(d => d.textContent.trim());
 
       if (isInput) {
-        dataRow.push(solution || "");
+        dataRow.push(solution);
         inputRow.push(true);
-        distractorRow.push(distractors);
+        distractorRow.push(useDropdown ? distractors : []); // Nur verwenden, wenn dropdown aktiviert
       } else {
-        dataRow.push(cell.textContent);
+        dataRow.push(cell.textContent.trim());
         inputRow.push(false);
         distractorRow.push([]);
       }
@@ -37,10 +38,20 @@ export function parseXML(xmlText) {
     distractorMap.push(distractorRow);
   });
 
-  return { data, inputMap, distractorMap, mode: "table" };
+  return {
+    data,
+    inputMap,
+    distractorMap: useDropdown ? distractorMap : [], // Nur zurückgeben, wenn sinnvoll
+    mode: "table"
+  };
 }
 
 export function parseJSON(jsonText) {
   const obj = JSON.parse(jsonText);
-  return { data: obj.data, inputMap: obj.inputMap, distractorMap: obj.distractorMap || [], mode: "table" };
+  return {
+    data: obj.data,
+    inputMap: obj.inputMap,
+    distractorMap: obj.distractorMap || [],
+    mode: "table"
+  };
 }
