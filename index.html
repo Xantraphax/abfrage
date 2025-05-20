@@ -10,82 +10,21 @@
   <div id="headline" style="display: none;">
     <h1>Lernapplet: Tabelle aus Datei</h1>
   </div>
-  <!-- Datei laden nur bei upload=true -->
+
   <div id="uploadSection" style="display: none;">
     <input type="file" id="fileInput" accept=".json, .xml" />
     <button id="loadButton">Datei laden</button>
   </div>
 
-  <!-- Tabelle -->
   <div id="tableContainer"></div>
 
-  <!-- Bild -->
   <div id="imageContainer" class="hidden" style="position: relative;">
     <img id="taskImage" src="" alt="Aufgabe" />
   </div>
 
-  <!-- Button und Rückmeldung -->
   <button id="checkButton" class="hidden">Eingaben überprüfen</button>
   <div id="feedback" class="hidden"></div>
 
   <script src="script.js"></script>
-  <script>
-    // Funktion: URL-Parameter lesen
-    function getParam(name) {
-      const urlParams = new URLSearchParams(window.location.search);
-      return urlParams.get(name);
-    }
-
-    // Steuere Sichtbarkeit von Upload
-    const showUpload = getParam("upload") === "true";
-    if (showUpload) {
-      document.getElementById("uploadSection").style.display = "block";
-    }
-    
-    // Steuere Sichtbarkeit von der Überschrift
-    const showHeadline = getParam("headline") === "true";
-    if (showHeadline) {
-      document.getElementById("headline").style.display = "block";
-    }
-
-    // Automatisches Laden bei auto=true
-    const autoLoad = getParam("auto") === "true";
-    const filePath = getParam("file");
-    const mode = getParam("mode");
-
-    if (autoLoad && filePath) {
-      const mode = new URLSearchParams(window.location.search).get("mode");
-    
-      fetch(filePath)
-        .then(response => {
-          if (!response.ok) throw new Error("Datei konnte nicht geladen werden.");
-          return response.text();
-        })
-        .then(text => {
-          if (filePath.endsWith(".xml")) {
-            if (mode === "bild") {
-              renderImageMode(text); // Bildmodus aktiv
-            } else {
-              const result = parseXML(text);
-              correctData = result.data;
-              inputFields = result.inputMap;
-              renderTable(correctData, inputFields);
-            }
-          } else if (filePath.endsWith(".json")) {
-            const result = parseJSON(text);
-            correctData = result.data;
-            inputFields = result.inputMap;
-            renderTable(correctData, inputFields);
-          } else {
-            throw new Error("Nur .json oder .xml wird unterstützt.");
-          }
-        })
-        .catch(err => {
-          const container = document.getElementById("tableContainer");
-          container.innerHTML = `<p style="color: red;">Fehler beim Laden: ${err.message}</p>`;
-        });
-    }
-
-  </script>
 </body>
 </html>
