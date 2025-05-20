@@ -4,12 +4,38 @@ export function parseXML(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 
+  const useDropdown = getParam("inputType") === "dropdown";
+  const isImageMode = xmlDoc.getElementsByTagName("image").length > 0;
+
+  if (isImageMode) {
+    const fields = Array.from(xmlDoc.getElementsByTagName("field"));
+    const data = [];
+    const inputMap = [];
+    const distractorMap = [];
+
+    fields.forEach((field, index) => {
+      const solution = field.getAttribute("solution")?.trim() || "";
+      const distractors = Array.from(field.getElementsByTagName("distractor")).map(d => d.textContent.trim());
+
+      data.push([solution]);
+      inputMap.push([true]);
+      distractorMap.push([useDropdown ? distractors : []]);
+    });
+
+    return {
+      data,
+      inputMap,
+      distractorMap: useDropdown ? distractorMap : [],
+      mode: "bild",
+      xmlDoc
+    };
+  }
+
+  // Fallback: Tabellen-Modus
   const rows = Array.from(xmlDoc.getElementsByTagName("row"));
   const data = [];
   const inputMap = [];
   const distractorMap = [];
-
-  const useDropdown = getParam("inputType") === "dropdown";
 
   rows.forEach((row, rowIndex) => {
     const cells = Array.from(row.getElementsByTagName("cell"));
@@ -25,7 +51,7 @@ export function parseXML(xmlText) {
       if (isInput) {
         dataRow.push(solution);
         inputRow.push(true);
-        distractorRow.push(useDropdown ? distractors : []); // Nur verwenden, wenn dropdown aktiviert
+        distractorRow.push(useDropdown ? distractors : []);
       } else {
         dataRow.push(cell.textContent.trim());
         inputRow.push(false);
@@ -41,17 +67,7 @@ export function parseXML(xmlText) {
   return {
     data,
     inputMap,
-    distractorMap: useDropdown ? distractorMap : [], // Nur zurückgeben, wenn sinnvoll
-    mode: "table"
-  };
-}
-
-export function parseJSON(jsonText) {
-  const obj = JSON.parse(jsonText);
-  return {
-    data: obj.data,
-    inputMap: obj.inputMap,
-    distractorMap: obj.distractorMap || [],
+    distractorMap: useDropdown ? distractorMap : [],
     mode: "table"
   };
 }
