@@ -2,15 +2,13 @@
 
 import { parseXML, parseJSON } from './parser.js';
 import { renderTable, renderImageMode } from './view.js';
+import { getParam } from './utils.js';
+
 
 let correctData = [];
 let inputFields = [];
 let distractorData = [];
 
-function getParam(name) {
-  const urlParams = new URLSearchParams(window.location.search);
-  return urlParams.get(name);
-}
 
 function checkInputs() {
   const allInputs = document.querySelectorAll("input[type='text'], select");
