@@ -1,16 +1,19 @@
 let correctData = [];
 let inputFields = [];
 
+function getParam(name) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(name);
+}
+
 function parseXML(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
 
-  // Bildmodus?
   if (xmlDoc.getElementsByTagName("imageTask").length > 0) {
     return { mode: "bild", xmlDoc };
   }
 
-  // Tabellenmodus
   const rows = Array.from(xmlDoc.getElementsByTagName("row"));
   const data = [];
   const inputMap = [];
@@ -74,7 +77,6 @@ function renderImageMode(xmlDoc) {
   const img = document.getElementById("taskImage");
   img.src = image.getAttribute("src");
 
-  // Alte Inputs löschen
   imageContainer.querySelectorAll("input").forEach(input => input.remove());
 
   correctData = [];
@@ -142,57 +144,30 @@ function checkInputs() {
     : "Ein oder mehrere Eingaben sind falsch.";
 }
 
-// === EVENT LISTENER ===
+// === Initialisierung ===
 
-document.getElementById("loadButton").addEventListener("click", () => {
-  const fileInput = document.getElementById("fileInput");
-  const file = fileInput.files[0];
-  if (!file) return;
+document.addEventListener("DOMContentLoaded", () => {
+  const showUpload = getParam("upload") === "true";
+  if (showUpload) {
+    document.getElementById("uploadSection").style.display = "block";
+  }
 
-  const reader = new FileReader();
+  const showHeadline = getParam("headline") === "true";
+  if (showHeadline) {
+    document.getElementById("headline").style.display = "block";
+  }
 
-  reader.onload = (e) => {
-    let result;
-    if (file.name.endsWith(".xml")) {
-      result = parseXML(e.target.result);
-      if (result.mode === "bild") {
-        renderImageMode(result.xmlDoc);
-      } else {
-        correctData = result.data;
-        inputFields = result.inputMap;
-        renderTable(correctData, inputFields);
-      }
-    } else if (file.name.endsWith(".json")) {
-      result = parseJSON(e.target.result);
-      correctData = result.data;
-      inputFields = result.inputMap;
-      renderTable(correctData, inputFields);
-    } else {
-      alert("Nur .json oder .xml Dateien erlaubt.");
-    }
-  };
+  document.getElementById("loadButton").addEventListener("click", () => {
+    const fileInput = document.getElementById("fileInput");
+    const file = fileInput.files[0];
+    if (!file) return;
 
-  reader.readAsText(file);
-});
+    const reader = new FileReader();
 
-document.getElementById("checkButton").addEventListener("click", checkInputs);
-
-// === AUTOMATISCHES LADEN ===
-
-const urlParams = new URLSearchParams(window.location.search);
-const autoLoad = urlParams.get("auto") === "true";
-const filePath = urlParams.get("file");
-const mode = urlParams.get("mode");
-
-if (autoLoad && filePath) {
-  fetch(filePath)
-    .then(response => {
-      if (!response.ok) throw new Error("Datei konnte nicht geladen werden.");
-      return response.text();
-    })
-    .then(text => {
-      if (filePath.endsWith(".xml")) {
-        const result = parseXML(text);
+    reader.onload = (e) => {
+      let result;
+      if (file.name.endsWith(".xml")) {
+        result = parseXML(e.target.result);
         if (result.mode === "bild") {
           renderImageMode(result.xmlDoc);
         } else {
@@ -200,17 +175,52 @@ if (autoLoad && filePath) {
           inputFields = result.inputMap;
           renderTable(correctData, inputFields);
         }
-      } else if (filePath.endsWith(".json")) {
-        const result = parseJSON(text);
+      } else if (file.name.endsWith(".json")) {
+        result = parseJSON(e.target.result);
         correctData = result.data;
         inputFields = result.inputMap;
         renderTable(correctData, inputFields);
       } else {
-        throw new Error("Nur .json oder .xml wird unterstützt.");
+        alert("Nur .json oder .xml Dateien erlaubt.");
       }
-    })
-    .catch(err => {
-      const container = document.getElementById("tableContainer");
-      container.innerHTML = `<p style="color: red;">Fehler beim Laden: ${err.message}</p>`;
-    });
-}
+    };
+
+    reader.readAsText(file);
+  });
+
+  document.getElementById("checkButton").addEventListener("click", checkInputs);
+
+  const autoLoad = getParam("auto") === "true";
+  const filePath = getParam("file");
+
+  if (autoLoad && filePath) {
+    fetch(filePath)
+      .then(response => {
+        if (!response.ok) throw new Error("Datei konnte nicht geladen werden.");
+        return response.text();
+      })
+      .then(text => {
+        if (filePath.endsWith(".xml")) {
+          const result = parseXML(text);
+          if (result.mode === "bild") {
+            renderImageMode(result.xmlDoc);
+          } else {
+            correctData = result.data;
+            inputFields = result.inputMap;
+            renderTable(correctData, inputFields);
+          }
+        } else if (filePath.endsWith(".json")) {
+          const result = parseJSON(text);
+          correctData = result.data;
+          inputFields = result.inputMap;
+          renderTable(correctData, inputFields);
+        } else {
+          throw new Error("Nur .json oder .xml wird unterstützt.");
+        }
+      })
+      .catch(err => {
+        const container = document.getElementById("tableContainer");
+        container.innerHTML = `<p style="color: red;">Fehler beim Laden: ${err.message}</p>`;
+      });
+  }
+});
