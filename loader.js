@@ -4,11 +4,9 @@ import { parseXML, parseJSON } from './parser.js';
 import { renderTable, renderImageMode } from './view.js';
 import { getParam } from './utils.js';
 
-
 let correctData = [];
 let inputFields = [];
 let distractorData = [];
-
 
 function checkInputs() {
   const allInputs = document.querySelectorAll("input[type='text'], select");
@@ -60,39 +58,40 @@ document.addEventListener("DOMContentLoaded", () => {
     headlineEl.style.display = "block";
   }
 
-  document.getElementById("loadButton").addEventListener("click", () => {
+  document.getElementById("loadButton")?.addEventListener("click", () => {
     const file = document.getElementById("fileInput").files[0];
     if (!file) return;
 
     const reader = new FileReader();
 
     reader.onload = (e) => {
+      const text = e.target.result;
       let result;
+
       if (file.name.endsWith(".xml")) {
-        result = parseXML(e.target.result);
-        if (result.mode === "bild") {
-          renderImageMode(result.xmlDoc, correctData, inputFields);
-        } else {
-          correctData = result.data;
-          inputFields = result.inputMap;
-          distractorData = result.distractorMap || [];
-          renderTable(correctData, inputFields, distractorData);
-        }
+        result = parseXML(text);
       } else if (file.name.endsWith(".json")) {
-        result = parseJSON(e.target.result);
-        correctData = result.data;
-        inputFields = result.inputMap;
-        distractorData = result.distractorMap || [];
-        renderTable(correctData, inputFields, distractorData);
+        result = parseJSON(text);
       } else {
         alert("Nur .json oder .xml Dateien erlaubt.");
+        return;
+      }
+
+      correctData = result.data;
+      inputFields = result.inputMap;
+      distractorData = result.distractorMap || [];
+
+      if (result.mode === "bild") {
+        renderImageMode(result.xmlDoc, correctData, inputFields);
+      } else {
+        renderTable(correctData, inputFields, correctData, distractorData);
       }
     };
 
     reader.readAsText(file);
   });
 
-  document.getElementById("checkButton").addEventListener("click", checkInputs);
+  document.getElementById("checkButton")?.addEventListener("click", checkInputs);
 
   const autoLoad = getParam("auto") === "true";
   const filePath = getParam("file");
@@ -104,24 +103,24 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.text();
       })
       .then(text => {
+        let result;
+
         if (filePath.endsWith(".xml")) {
-          const result = parseXML(text);
-          if (result.mode === "bild") {
-            renderImageMode(result.xmlDoc, correctData, inputFields);
-          } else {
-            correctData = result.data;
-            inputFields = result.inputMap;
-            distractorData = result.distractorMap || [];
-            renderTable(correctData, inputFields, distractorData);
-          }
+          result = parseXML(text);
         } else if (filePath.endsWith(".json")) {
-          const result = parseJSON(text);
-          correctData = result.data;
-          inputFields = result.inputMap;
-          distractorData = result.distractorMap || [];
-          renderTable(correctData, inputFields, distractorData);
+          result = parseJSON(text);
         } else {
           throw new Error("Nur .json oder .xml wird unterstützt.");
+        }
+
+        correctData = result.data;
+        inputFields = result.inputMap;
+        distractorData = result.distractorMap || [];
+
+        if (result.mode === "bild") {
+          renderImageMode(result.xmlDoc, correctData, inputFields);
+        } else {
+          renderTable(correctData, inputFields, correctData, distractorData);
         }
       })
       .catch(err => {
