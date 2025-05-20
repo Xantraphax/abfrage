@@ -1,4 +1,5 @@
 // view.js
+import { getParam } from './utils.js';
 
 export function renderTable(data, inputFields) {
   const container = document.getElementById("tableContainer");
