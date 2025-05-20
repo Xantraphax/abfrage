@@ -5,6 +5,7 @@ import { renderTable, renderImageMode } from './view.js';
 
 let correctData = [];
 let inputFields = [];
+let distractorData = [];
 
 function getParam(name) {
   const urlParams = new URLSearchParams(window.location.search);
@@ -43,7 +44,6 @@ function checkInputs() {
     : "Ein oder mehrere Eingaben sind falsch.";
 }
 
-
 document.addEventListener("DOMContentLoaded", () => {
   if (getParam("upload") === "true") {
     document.getElementById("uploadSection").style.display = "block";
@@ -54,12 +54,11 @@ document.addEventListener("DOMContentLoaded", () => {
   if (showHeadline) {
     const headlineEl = document.getElementById("headline");
     const h1 = headlineEl.querySelector("h1");
-  
-    // Setze Text, wenn headlineText vorhanden ist
+
     if (headlineText) {
       h1.textContent = decodeURIComponent(headlineText);
     }
-  
+
     headlineEl.style.display = "block";
   }
 
@@ -78,13 +77,15 @@ document.addEventListener("DOMContentLoaded", () => {
         } else {
           correctData = result.data;
           inputFields = result.inputMap;
-          renderTable(correctData, inputFields);
+          distractorData = result.distractorMap || [];
+          renderTable(correctData, inputFields, distractorData);
         }
       } else if (file.name.endsWith(".json")) {
         result = parseJSON(e.target.result);
         correctData = result.data;
         inputFields = result.inputMap;
-        renderTable(correctData, inputFields);
+        distractorData = result.distractorMap || [];
+        renderTable(correctData, inputFields, distractorData);
       } else {
         alert("Nur .json oder .xml Dateien erlaubt.");
       }
@@ -112,13 +113,15 @@ document.addEventListener("DOMContentLoaded", () => {
           } else {
             correctData = result.data;
             inputFields = result.inputMap;
-            renderTable(correctData, inputFields);
+            distractorData = result.distractorMap || [];
+            renderTable(correctData, inputFields, distractorData);
           }
         } else if (filePath.endsWith(".json")) {
           const result = parseJSON(text);
           correctData = result.data;
           inputFields = result.inputMap;
-          renderTable(correctData, inputFields);
+          distractorData = result.distractorMap || [];
+          renderTable(correctData, inputFields, distractorData);
         } else {
           throw new Error("Nur .json oder .xml wird unterstützt.");
         }
