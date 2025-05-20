@@ -12,11 +12,12 @@ function getParam(name) {
 }
 
 function checkInputs() {
-  const inputs = document.querySelectorAll("input[type='text']");
+  const allInputs = document.querySelectorAll("input[type='text'], select");
   let allCorrect = true;
+
   const individualFeedback = getParam("feedback") === "individual";
 
-  inputs.forEach(input => {
+  allInputs.forEach(input => {
     const row = parseInt(input.dataset.row);
     const cell = parseInt(input.dataset.cell);
     const value = input.value.trim();
@@ -41,6 +42,7 @@ function checkInputs() {
     ? "Alle Eingaben sind korrekt!"
     : "Ein oder mehrere Eingaben sind falsch.";
 }
+
 
 document.addEventListener("DOMContentLoaded", () => {
   if (getParam("upload") === "true") {
