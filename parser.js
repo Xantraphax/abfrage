@@ -71,3 +71,13 @@ export function parseXML(xmlText) {
     mode: "table"
   };
 }
+
+export function parseJSON(jsonText) {
+  const obj = JSON.parse(jsonText);
+  return {
+    data: obj.data,
+    inputMap: obj.inputMap,
+    distractorMap: obj.distractorMap || [],
+    mode: "table"
+  };
+}
