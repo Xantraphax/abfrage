@@ -1,4 +1,6 @@
 // parser.js
+import { getParam } from './utils.js';
+
 export function parseXML(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
