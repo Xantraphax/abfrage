@@ -1,12 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
   <image src="Terme Addierer.png" />
-  <field x="2.10%" y="65.58%" width="3.69%" height="17.05%" solution="0" />
-  <field x="6.50%" y="65.58%" width="3.94%" height="17.12%" solution="0" />
-  <field x="19.83%" y="64.85%" width="4.08%" height="17.42%" solution="0" />
-  <field x="24.70%" y="64.85%" width="4.32%" height="17.78%" solution="1" />
-  <field x="38.05%" y="64.56%" width="4.00%" height="17.78%" solution="0" />
-  <field x="43.14%" y="64.85%" width="4.00%" height="18.14%" solution="1" />
-  <field x="57.74%" y="66.01%" width="4.79%" height="19.96%" solution="1" />
-  <field x="63.39%" y="66.37%" width="4.39%" height="19.59%" solution="0" />
+  <field x="2.10%" y="65.58%" width="3.69%" height="17.05%" solution="0" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="6.50%" y="65.58%" width="3.94%" height="17.12%" solution="0" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="19.83%" y="64.85%" width="4.08%" height="17.42%" solution="0" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="24.70%" y="64.85%" width="4.32%" height="17.78%" solution="1" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="38.05%" y="64.56%" width="4.00%" height="17.78%" solution="0" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="43.14%" y="64.85%" width="4.00%" height="18.14%" solution="1" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="57.74%" y="66.01%" width="4.79%" height="19.96%" solution="1" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
+  <field x="63.39%" y="66.37%" width="4.39%" height="19.59%" solution="0" >
+    <distractor>Tür</distractor>
+    <distractor>Fenster</distractor>
+  </field>
 </imageTask>
