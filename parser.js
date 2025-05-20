@@ -1,4 +1,12 @@
 // parser.js
+let correctData = [];
+let inputFields = [];
+let distractorData = []; // ⬅️ neu!
+
+const result = parseXML(xmlText); // oder parseJSON()
+correctData = result.data;
+inputFields = result.inputMap;
+distractorData = result.distractorMap || []; // falls leer
 
 export function parseXML(xmlText) {
   const parser = new DOMParser();
