@@ -47,8 +47,18 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("uploadSection").style.display = "block";
   }
 
-  if (getParam("headline") === "true") {
-    document.getElementById("headline").style.display = "block";
+  const showHeadline = getParam("headline") === "true";
+  const headlineText = getParam("headlineText");
+  if (showHeadline) {
+    const headlineEl = document.getElementById("headline");
+    const h1 = headlineEl.querySelector("h1");
+  
+    // Setze Text, wenn headlineText vorhanden ist
+    if (headlineText) {
+      h1.textContent = decodeURIComponent(headlineText);
+    }
+  
+    headlineEl.style.display = "block";
   }
 
   document.getElementById("loadButton").addEventListener("click", () => {
