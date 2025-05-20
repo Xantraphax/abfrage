@@ -1,7 +1,7 @@
 // view.js
 import { getParam } from './utils.js';
 
-export function renderTable(data, inputFields) {
+export function renderTable(data, inputFields, correctData, distractorData = []) {
   const container = document.getElementById("tableContainer");
   container.innerHTML = "";
 
@@ -55,7 +55,6 @@ export function renderTable(data, inputFields) {
   document.getElementById("feedback").classList.add("hidden");
 }
 
-
 export function renderImageMode(xmlDoc, correctData, inputFields) {
   const image = xmlDoc.getElementsByTagName("image")[0];
   const fields = Array.from(xmlDoc.getElementsByTagName("field"));
@@ -93,4 +92,13 @@ export function renderImageMode(xmlDoc, correctData, inputFields) {
   imageContainer.classList.remove("hidden");
   document.getElementById("checkButton").classList.remove("hidden");
   document.getElementById("feedback").classList.add("hidden");
+}
+
+function shuffleArray(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
