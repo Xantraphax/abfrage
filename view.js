@@ -55,7 +55,7 @@ export function renderTable(data, inputFields, correctData, distractorData = [])
   document.getElementById("feedback").classList.add("hidden");
 }
 
-export function renderImageMode(xmlDoc, correctData, inputFields) {
+export function renderImageMode(xmlDoc, correctData, inputFields, distractorData = []) {
   const image = xmlDoc.getElementsByTagName("image")[0];
   const fields = Array.from(xmlDoc.getElementsByTagName("field"));
 
@@ -63,20 +63,35 @@ export function renderImageMode(xmlDoc, correctData, inputFields) {
   const img = document.getElementById("taskImage");
   img.src = image.getAttribute("src");
 
-  imageContainer.querySelectorAll("input").forEach(input => input.remove());
+  imageContainer.querySelectorAll("input, select").forEach(el => el.remove());
+
+  const useDropdown = getParam("inputType") === "dropdown";
 
   fields.forEach((field, index) => {
     const x = field.getAttribute("x");
     const y = field.getAttribute("y");
     const width = field.getAttribute("width");
     const height = field.getAttribute("height");
-    const solution = field.getAttribute("solution");
 
-    correctData[index] = [solution];
-    inputFields[index] = [true];
+    const input = useDropdown
+      ? document.createElement("select")
+      : document.createElement("input");
 
-    const input = document.createElement("input");
-    input.type = "text";
+    if (!useDropdown) {
+      input.type = "text";
+    } else {
+      const correct = correctData[index][0];
+      const distractors = distractorData?.[index]?.[0] || [];
+      const options = shuffleArray([correct, ...distractors]);
+
+      options.forEach(opt => {
+        const optionEl = document.createElement("option");
+        optionEl.value = opt;
+        optionEl.textContent = opt;
+        input.appendChild(optionEl);
+      });
+    }
+
     input.classList.add("image-input");
     input.dataset.row = index;
     input.dataset.cell = 0;
@@ -94,11 +109,9 @@ export function renderImageMode(xmlDoc, correctData, inputFields) {
   document.getElementById("feedback").classList.add("hidden");
 }
 
-function shuffleArray(arr) {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
+function shuffleArray(array) {
+  return array
+    .map(value => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
 }
