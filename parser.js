@@ -1,23 +1,18 @@
 // parser.js
-let correctData = [];
-let inputFields = [];
-let distractorData = []; // ⬅️ neu!
-
-const result = parseXML(xmlText); // oder parseJSON()
-correctData = result.data;
-inputFields = result.inputMap;
-distractorData = result.distractorMap || []; // falls leer
-
 export function parseXML(xmlText) {
   const parser = new DOMParser();
   const xmlDoc = parser.parseFromString(xmlText, "text/xml");
+
+  if (xmlDoc.getElementsByTagName("imageTask").length > 0) {
+    return { mode: "bild", xmlDoc };
+  }
 
   const rows = Array.from(xmlDoc.getElementsByTagName("row"));
   const data = [];
   const inputMap = [];
   const distractorMap = [];
 
-  rows.forEach((row, rowIndex) => {
+  rows.forEach(row => {
     const cells = Array.from(row.getElementsByTagName("cell"));
     const dataRow = [];
     const inputRow = [];
@@ -29,7 +24,7 @@ export function parseXML(xmlText) {
       const distractors = Array.from(cell.getElementsByTagName("distractor")).map(d => d.textContent);
 
       if (isInput) {
-        dataRow.push(solution || ""); // lösung als inhalt im datenarray
+        dataRow.push(solution || "");
         inputRow.push(true);
         distractorRow.push(distractors);
       } else {
@@ -47,8 +42,12 @@ export function parseXML(xmlText) {
   return { data, inputMap, distractorMap, mode: "table" };
 }
 
-
 export function parseJSON(jsonText) {
   const obj = JSON.parse(jsonText);
-  return { data: obj.data, inputMap: obj.inputMap, mode: "table" };
+  return {
+    data: obj.data,
+    inputMap: obj.inputMap,
+    distractorMap: obj.distractorMap || [],
+    mode: "table"
+  };
 }
