@@ -82,7 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
       distractorData = result.distractorMap || [];
 
       if (result.mode === "bild") {
-        renderImageMode(result.xmlDoc, correctData, inputFields);
+        renderImageMode(result.xmlDoc, correctData, inputFields, result.distractorMap);
+
       } else {
         renderTable(correctData, inputFields, correctData, distractorData);
       }
@@ -118,7 +119,8 @@ document.addEventListener("DOMContentLoaded", () => {
         distractorData = result.distractorMap || [];
 
         if (result.mode === "bild") {
-          renderImageMode(result.xmlDoc, correctData, inputFields);
+          renderImageMode(result.xmlDoc, correctData, inputFields, result.distractorMap);
+
         } else {
           renderTable(correctData, inputFields, correctData, distractorData);
         }
