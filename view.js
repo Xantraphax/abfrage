@@ -56,6 +56,7 @@ export function renderTable(data, inputFields, correctData, distractorData = [])
 }
 
 export function renderImageMode(xmlDoc, correctData, inputFields, distractorData = []) {
+  const inputType = getParam("inputType"); // "text" oder "dropdown"
   const image = xmlDoc.getElementsByTagName("image")[0];
   const fields = Array.from(xmlDoc.getElementsByTagName("field"));
 
@@ -65,43 +66,51 @@ export function renderImageMode(xmlDoc, correctData, inputFields, distractorData
 
   imageContainer.querySelectorAll("input, select").forEach(el => el.remove());
 
-  const useDropdown = getParam("inputType") === "dropdown";
-
   fields.forEach((field, index) => {
     const x = field.getAttribute("x");
     const y = field.getAttribute("y");
     const width = field.getAttribute("width");
     const height = field.getAttribute("height");
+    const solution = field.getAttribute("solution");
 
-    const input = useDropdown
-      ? document.createElement("select")
-      : document.createElement("input");
+    correctData[index] = [solution];
+    inputFields[index] = [true];
 
-    if (!useDropdown) {
-      input.type = "text";
-    } else {
-      const correct = correctData[index][0];
-      const distractors = distractorData?.[index]?.[0] || [];
-      const options = shuffleArray([correct, ...distractors]);
+    let inputElement;
+
+    if (inputType === "dropdown") {
+      const distractors = Array.from(field.getElementsByTagName("distractor")).map(d => d.textContent.trim());
+      const options = shuffleArray([solution, ...distractors]);
+
+      const select = document.createElement("select");
+      select.dataset.row = index;
+      select.dataset.cell = 0;
+      select.classList.add("image-input");
 
       options.forEach(opt => {
         const optionEl = document.createElement("option");
         optionEl.value = opt;
         optionEl.textContent = opt;
-        input.appendChild(optionEl);
+        select.appendChild(optionEl);
       });
+
+      inputElement = select;
+    } else {
+      const input = document.createElement("input");
+      input.type = "text";
+      input.classList.add("image-input");
+      input.dataset.row = index;
+      input.dataset.cell = 0;
+      inputElement = input;
     }
 
-    input.classList.add("image-input");
-    input.dataset.row = index;
-    input.dataset.cell = 0;
+    // Style-Positionierung
+    inputElement.style.left = x;
+    inputElement.style.top = y;
+    inputElement.style.width = width;
+    inputElement.style.height = height;
 
-    input.style.left = x;
-    input.style.top = y;
-    input.style.width = width;
-    input.style.height = height;
-
-    imageContainer.appendChild(input);
+    imageContainer.appendChild(inputElement);
   });
 
   imageContainer.classList.remove("hidden");
