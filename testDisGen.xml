@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="Mux Tabelle.png" />
+  <field x="32.92%" y="17.19%" width="10.31%" height="19.05%" solution="Genau">
+<distractor>Hallo</distractor><distractor>Test</distractor><distractor>Hi</distractor>
+  </field>
+</imageTask>
