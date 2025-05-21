@@ -6,7 +6,7 @@ This command will automaticly load a xml-file. This file contains the structur o
 2. mode=bild
 This paramters tells the side that the xml-file was genertaed with a picture and not a table in mind.
 
-3.inputType=dropdown
+3. inputType=dropdown
 Instead of free text field the blank spots contains drop-down menues with the right answer and some distrctors.
 
 4. feedback=individual
