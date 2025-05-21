@@ -1,0 +1,32 @@
+<root>
+	<row>
+		<cell input="false">Daten (l)</cell>
+		<cell input="false">Steuer (s)</cell>
+		<cell input="false">Ausgang 0 (d0)</cell>
+		<cell input="false">Ausgang 1 (d1)</cell>
+	</row>
+	<row>
+		<cell input="false">0</cell>
+		<cell input="false">0</cell>
+		<cell input="true">0</cell>
+		<cell input="true">0</cell>
+	</row>
+	<row>
+		<cell input="false">0</cell>
+		<cell input="false"1</cell>
+		<cell input="true">0</cell>
+		<cell input="true">0</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="true">1</cell>
+		<cell input="true">0</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">1</cell>
+		<cell input="true">0</cell>
+		<cell input="true">1</cell>
+	</row>
+</root>
