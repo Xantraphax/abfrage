@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
-  <image src="Terme Addierer.png" />
+  <image src="./png/termeAddierer.png" />
   <field x="2.10%" y="65.58%" width="3.69%" height="17.05%" solution="0" >
     <distractor>1</distractor>
     <distractor>2</distractor>
