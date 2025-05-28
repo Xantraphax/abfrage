@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="./png/vollAdd.png" />
+  <field x="2.30%" y="53.10%" width="2.99%" height="10.23%" solution="0">
+
+  </field>
+  <field x="6.58%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="70.72%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="66.29%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="57.79%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="53.58%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="44.79%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="40.80%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="32.01%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="28.01%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="19.37%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="15.15%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="95.79%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="91.43%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+  <field x="83.15%" y="53.10%" width="2.98%" height="10.18%" solution="0">
+
+  </field>
+  <field x="79.08%" y="53.10%" width="2.98%" height="10.18%" solution="1">
+
+  </field>
+</imageTask>
