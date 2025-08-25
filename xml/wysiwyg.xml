@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src=".png/wysiwyg.png" />
+  <field x="1.43%" y="76.23%" width="14.54%" height="11.60%" solution="Schriftgröße">
+     <distractor>Bild einfügen</distractor>
+     <distractor>Link einfügen</distractor>
+     <distractor>Aufzählung einfügen</distractor>
+  </field>
+  <field x="20.16%" y="76.23%" width="14.52%" height="11.53%" solution="Bild einfügen">
+     <distractor>Schriftgröße</distractor>
+     <distractor>Link einfügen</distractor>
+     <distractor>Aufzählung einfügen</distractor>
+  </field>
+  <field x="37.84%" y="76.23%" width="14.52%" height="11.53%" solution="Link einfügen">
+     <distractor>Schriftgröße</distractor>
+     <distractor>Bild einfügen</distractor>
+     <distractor>Aufzählung einfügen</distractor>
+  </field>
+  <field x="59.80%" y="76.23%" width="14.52%" height="11.53%" solution="Aufzählung einfügen">
+     <distractor>Schriftgröße</distractor>
+     <distractor>Bild einfügen</distractor>
+     <distractor>Link einfügen</distractor>
+  </field>
+</imageTask>
