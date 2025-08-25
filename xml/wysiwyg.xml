@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
-  <image src=".png/wysiwyg.png" />
+  <image src="./png/wysiwyg.png" />
   <field x="1.43%" y="76.23%" width="14.54%" height="11.60%" solution="Schriftgröße">
      <distractor>Bild einfügen</distractor>
      <distractor>Link einfügen</distractor>
