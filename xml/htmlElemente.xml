@@ -3,14 +3,14 @@
   <image src="./png/htmlElemente.png" />
   <field x="4.07%" y="42.73%" width="26.90%" height="4.49%" solution="Absatz">
      <distractor>Aufzählung</distractor>
-     <distractor>Überschrift"</distractor>
+     <distractor>Überschrift</distractor>
      <distractor>Zwischenüberschrift</distractor>
      <distractor>Aufzählungspunkt</distractor>
   </field>
   <field x="36.48%" y="42.73%" width="26.92%" height="4.55%" solution="Zwischenüberschrift">
      <distractor>Aufzählung</distractor>
      <distractor>Absatz</distractor>
-     <distractor>Überschrift"</distractor>
+     <distractor>Überschrift</distractor>
      <distractor>Aufzählungspunkt</distractor>
   </field>
   <field x="68.94%" y="42.73%" width="26.92%" height="4.55%" solution="Aufzählungspunkt">
@@ -21,7 +21,7 @@
   </field>
   <field x="20.85%" y="90.67%" width="26.92%" height="4.55%" solution="Aufzählung">
      <distractor>Absatz</distractor>
-     <distractor>Überschrift"</distractor>
+     <distractor>Überschrift</distractor>
      <distractor>Zwischenüberschrift</distractor>
      <distractor>Aufzählungspunkt</distractor>
   </field>
