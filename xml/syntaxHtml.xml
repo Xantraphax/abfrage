@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="./png/syntaxHtml.png" />
+  <field x="4.34%" y="29.50%" width="25.58%" height="11.33%" solution="Semantik">
+     <distractor>Syntax</distractor>
+  </field>
+  <field x="37.45%" y="29.50%" width="25.55%" height="11.26%" solution="Syntax">
+     <distractor>Semantik</distractor>
+  </field>
+  <field x="70.00%" y="29.50%" width="25.55%" height="11.26%" solution="Syntax">
+     <distractor>Semantik</distractor>
+  </field>
+  <field x="3.93%" y="74.91%" width="25.55%" height="11.26%" solution="Semantik">
+     <distractor>Syntax</distractor>
+  </field>
+  <field x="36.90%" y="74.91%" width="25.55%" height="11.26%" solution="Syntax">
+     <distractor>Semantik</distractor>
+  </field>
+  <field x="70.27%" y="74.91%" width="25.55%" height="11.26%" solution="Syntax">
+     <distractor>Semantik</distractor>
+  </field>
+</imageTask>
