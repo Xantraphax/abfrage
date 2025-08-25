@@ -1,22 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
-  <image src="./png/seite.png" />
+  <image src="seite.png" />
   <field x="37.81%" y="1.00%" width="12.89%" height="7.16%" solution="Überschrifft">
-
+    <distractor>"2. Überschrifft"</distractor>
+    <distractor>"Link"</distractor>
   </field>
   <field x="14.27%" y="14.50%" width="15.34%" height="6.24%" solution="2. Überschrifft">
-
+    <distractor>"Überschrifft"</distractor>
+    <distractor>"Absatz"</distractor>
   </field>
   <field x="86.04%" y="71.80%" width="8.43%" height="8.07%" solution="Bild">
-
+    <distractor>"Link"</distractor>
+    <distractor>"Aufzählung"</distractor>
   </field>
   <field x="39.27%" y="35.22%" width="15.50%" height="7.10%" solution="Absatz">
-
+    <distractor>"Überschrifft"</distractor>
+    <distractor>"Link""</distractor>
   </field>
   <field x="31.40%" y="55.12%" width="8.43%" height="8.07%" solution="Link">
-
+    <distractor>1</distractor>
+    <distractor>2</distractor>
   </field>
   <field x="27.78%" y="85.84%" width="12.25%" height="7.04%" solution="Aufzählung">
-
+    <distractor>"Link"</distractor>
+    <distractor>"Bild"</distractor>
   </field>
 </imageTask>
