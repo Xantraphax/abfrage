@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
-  <image src="seite.png" />
+  <image src="./png/seite.png" />
   <field x="37.81%" y="1.00%" width="12.89%" height="7.16%" solution="Überschrifft">
     <distractor>"2. Überschrifft"</distractor>
     <distractor>"Link"</distractor>
