@@ -33,11 +33,11 @@
     <distractor>img</distractor>
     <distractor>body</distractor>
   </field>
-  <field x="68.45%" y="31.21%" width="8.85%" height="11.43%" solution="p">
+  <field x="68.45%" y="31.21%" width="8.85%" height="11.43%" solution="ul">
     <distractor>em</distractor>
     <distractor>h1</distractor>
     <distractor>li</distractor>
-    <distractor>ul</distractor>
+    <distractor>p</distractor>
     <distractor>img</distractor>
     <distractor>body</distractor>
   </field>
@@ -65,18 +65,18 @@
     <distractor>body</distractor>
     <distractor>p</distractor>
   </field>
-  <field x="63.25%" y="54.80%" width="8.85%" height="11.43%" solution="ul">
+  <field x="63.25%" y="54.80%" width="8.85%" height="11.43%" solution="li">
     <distractor>em</distractor>
     <distractor>h1</distractor>
-    <distractor>li</distractor>
+    <distractor>ul</distractor>
     <distractor>img</distractor>
     <distractor>body</distractor>
     <distractor>p</distractor>
   </field>
-  <field x="73.58%" y="55.23%" width="8.85%" height="11.43%" solution="ul">
+  <field x="73.58%" y="55.23%" width="8.85%" height="11.43%" solution="li">
     <distractor>em</distractor>
     <distractor>h1</distractor>
-    <distractor>li</distractor>
+    <distractor>ul</distractor>
     <distractor>img</distractor>
     <distractor>body</distractor>
     <distractor>p</distractor>
@@ -89,16 +89,16 @@
     <distractor>body</distractor>
     <distractor>p</distractor>
   </field>
-  <field x="63.25%" y="78.68%" width="8.85%" height="11.43%" solution="li">
-    <distractor>em</distractor>
+  <field x="63.25%" y="78.68%" width="8.85%" height="11.43%" solution="em">
+    <distractor>li</distractor>
     <distractor>h1</distractor>
     <distractor>ul</distractor>
     <distractor>img</distractor>
     <distractor>body</distractor>
     <distractor>p</distractor>
   </field>
-  <field x="73.65%" y="78.82%" width="8.85%" height="11.43%" solution="li">
-    <distractor>em</distractor>
+  <field x="73.65%" y="78.82%" width="8.85%" height="11.43%" solution="em">
+    <distractor>li</distractor>
     <distractor>h1</distractor>
     <distractor>ul</distractor>
     <distractor>img</distractor>
