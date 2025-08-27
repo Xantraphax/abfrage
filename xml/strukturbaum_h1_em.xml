@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="./png/strukturbaumGanz.png" />
+  <field x="5.63%" y="31.13%" width="5.21%" height="12.03%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="18.43%" y="31.05%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="30.76%" y="30.58%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="43.65%" y="31.29%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="19.69%" y="55.78%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="31.60%" y="55.78%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓ </distractor>
+  </field>
+  <field x="44.00%" y="55.54%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓ </distractor>
+  </field>
+  <field x="56.74%" y="55.30%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="69.14%" y="30.81%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="69.14%" y="55.54%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="56.88%" y="79.55%" width="5.22%" height="12.13%" solution="✓">
+    <distractor> </distractor>
+  </field>
+  <field x="69.91%" y="79.79%" width="5.22%" height="12.13%" solution="✓">
+    <distractor> </distractor>
+  </field>
+  <field x="82.59%" y="79.79%" width="5.22%" height="12.13%" solution="✓">
+    <distractor> </distractor>
+  </field>
+  <field x="81.89%" y="55.54%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="94.36%" y="55.54%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+  <field x="94.83%" y="31.05%" width="5.22%" height="12.13%" solution="">
+    <distractor>✓</distractor>
+  </field>
+</imageTask>
