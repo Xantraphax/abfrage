@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="./png/strukturbaum.png" />
+  <field x="58.67%" y="7.37%" width="8.86%" height="11.46%" solution="body">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="31.85%" y="31.21%" width="8.85%" height="11.43%" solution="h1">
+    <distractor>em</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="42.25%" y="31.21%" width="8.85%" height="11.43%" solution="p">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+  </field>
+  <field x="52.58%" y="31.64%" width="8.85%" height="11.43%" solution="p">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+  </field>
+  <field x="68.45%" y="31.21%" width="8.85%" height="11.43%" solution="p">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+  </field>
+  <field x="42.31%" y="55.38%" width="8.85%" height="11.43%" solution="img">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="87.29%" y="31.50%" width="8.85%" height="11.43%" solution="p">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+  </field>
+  <field x="52.71%" y="55.23%" width="8.85%" height="11.43%" solution="em">
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="63.25%" y="54.80%" width="8.85%" height="11.43%" solution="ul">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="73.58%" y="55.23%" width="8.85%" height="11.43%" solution="ul">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="87.22%" y="55.23%" width="8.85%" height="11.43%" solution="em">
+    <distractor>h1</distractor>
+    <distractor>li</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="63.25%" y="78.68%" width="8.85%" height="11.43%" solution="li">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+  <field x="73.65%" y="78.82%" width="8.85%" height="11.43%" solution="li">
+    <distractor>em</distractor>
+    <distractor>h1</distractor>
+    <distractor>ul</distractor>
+    <distractor>img</distractor>
+    <distractor>body</distractor>
+    <distractor>p</distractor>
+  </field>
+</imageTask>
