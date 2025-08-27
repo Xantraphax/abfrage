@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
-  <image src="strukturbaumGanz.png" />
+  <image src="./png/strukturbaumGanz.png" />
   <field x="7.41%" y="31.03%" width="3.44%" height="11.98%" solution="✓">
 <distractor>X</distractor>
   </field>
