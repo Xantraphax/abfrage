@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="./png/modulo.png" />
+  <field x="14.93%" y="2.11%" width="10.95%" height="8.75%" solution="4">
+
+  </field>
+  <field x="42.35%" y="1.69%" width="10.91%" height="8.67%" solution="21">
+
+  </field>
+  <field x="62.53%" y="1.69%" width="10.91%" height="8.67%" solution="4">
+
+  </field>
+  <field x="16.18%" y="11.44%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="44.19%" y="11.44%" width="10.91%" height="8.67%" solution="8">
+
+  </field>
+  <field x="64.18%" y="11.44%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="15.12%" y="21.19%" width="10.91%" height="8.67%" solution="7">
+
+  </field>
+  <field x="41.97%" y="21.19%" width="10.91%" height="8.67%" solution="16">
+
+  </field>
+  <field x="61.86%" y="21.19%" width="10.91%" height="8.67%" solution="7">
+
+  </field>
+  <field x="16.38%" y="30.94%" width="10.91%" height="8.67%" solution="10">
+
+  </field>
+  <field x="44.38%" y="30.94%" width="10.91%" height="8.67%" solution="0">
+
+  </field>
+  <field x="64.66%" y="30.94%" width="10.91%" height="8.67%" solution="10">
+
+  </field>
+  <field x="17.83%" y="40.90%" width="10.91%" height="8.67%" solution="1">
+
+  </field>
+  <field x="47.28%" y="40.90%" width="10.91%" height="8.67%" solution="5">
+
+  </field>
+  <field x="66.88%" y="40.90%" width="10.91%" height="8.67%" solution="1">
+
+  </field>
+  <field x="14.93%" y="50.65%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="41.68%" y="50.65%" width="10.91%" height="8.67%" solution="10">
+
+  </field>
+  <field x="62.05%" y="50.65%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="13.58%" y="60.18%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="39.07%" y="60.18%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="58.96%" y="60.18%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="16.86%" y="69.93%" width="10.91%" height="8.67%" solution="3">
+
+  </field>
+  <field x="34.05%" y="69.93%" width="10.91%" height="8.67%" solution="33">
+
+  </field>
+  <field x="48.73%" y="69.93%" width="10.91%" height="8.67%" solution="15">
+
+  </field>
+  <field x="64.66%" y="69.93%" width="10.91%" height="8.67%" solution="2">
+
+  </field>
+  <field x="84.45%" y="69.93%" width="10.91%" height="8.67%" solution="3">
+
+  </field>
+  <field x="17.54%" y="80.11%" width="10.91%" height="8.67%" solution="7">
+
+  </field>
+  <field x="35.40%" y="80.11%" width="10.91%" height="8.67%" solution="107">
+
+  </field>
+  <field x="50.27%" y="80.11%" width="10.91%" height="8.67%" solution="25">
+
+  </field>
+  <field x="66.11%" y="80.11%" width="10.91%" height="8.67%" solution="4">
+
+  </field>
+  <field x="85.90%" y="80.11%" width="10.91%" height="8.67%" solution="7">
+
+  </field>
+  <field x="19.27%" y="89.86%" width="10.91%" height="8.67%" solution="20">
+
+  </field>
+  <field x="36.75%" y="89.86%" width="10.91%" height="8.67%" solution="2180">
+
+  </field>
+  <field x="51.53%" y="89.86%" width="10.91%" height="8.67%" solution="54">
+
+  </field>
+  <field x="67.17%" y="89.86%" width="10.91%" height="8.67%" solution="40">
+
+  </field>
+  <field x="87.25%" y="89.86%" width="10.91%" height="8.67%" solution="20">
+
+  </field>
+</imageTask>
