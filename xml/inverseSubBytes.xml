@@ -1,0 +1,42 @@
+<root>
+	<row>
+		<cell input="false">8</cell>
+		<cell input="true" solution="7"></cell>
+		<cell input="false">4</cell>
+		<cell input="true" solution="1"></cell>
+		<cell input="false">3</cell>
+		<cell input="true" solution="8"></cell>
+		<cell input="false">9</cell>
+		<cell input="true" solution="D"></cell>
+	</row>
+	<row>
+		<cell input="false">4</cell>
+		<cell input="true" solution="1"></cell>
+		<cell input="false">a</cell>
+		<cell input="true" solution="9"></cell>
+		<cell input="false">a</cell>
+		<cell input="true" solution="9"></cell>
+		<cell input="false">f</cell>
+		<cell input="true" solution="5"></cell>
+	</row>
+	<row>
+		<cell input="false">7</cell>
+		<cell input="true" solution="F"></cell>
+		<cell input="false">7</cell>
+		<cell input="true" solution="F"></cell>
+		<cell input="false">f</cell>
+		<cell input="true" solution="5"></cell>
+		<cell input="false">5</cell>
+		<cell input="true" solution="C"></cell>
+	</row>
+	<row>
+		<cell input="false">0</cell>
+		<cell input="true" solution="e"></cell>
+		<cell input="false">b</cell>
+		<cell input="true" solution="6"></cell>
+		<cell input="false">8</cell>
+		<cell input="true" solution="7"></cell>
+		<cell input="false">4</cell>
+		<cell input="true" solution="1"></cell>
+	</row>
+</root>
