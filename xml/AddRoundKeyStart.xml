@@ -2,24 +2,24 @@
 	<row>
 		<cell input="false">Zeile0</cell>
 		<cell input="false">e⊕6 = </cell>
-		<cell input="true">8</cell>
+		<cell input="true" solution="8"></cell>
 		<cell input="false">0⊕4 = </cell>
-		<cell input="true">4</cell>
+		<cell input="true" solution="4"></cell>
 		<cell input="false">c⊕f = </cell>
-		<cell input="true">3</cell>
+		<cell input="true" solution="3"></cell>
 		<cell input="false">8⊕1 = </cell>
-		<cell input="true">9</cell>
+		<cell input="true" solution="9"></cell>
 	</row>
 	<row>
 		<cell input="false">Zeile1</cell>
 		<cell input="false">9⊕2 = </cell>
-		<cell input="true">c</cell>
+		<cell input="true" solution="c"></cell>
 		<cell input="false">c⊕9 = </cell>
-		<cell input="true">5</cell>
+		<cell input="true" solution="5"></cell>
 		<cell input="false">c⊕0 = </cell>
-		<cell input="true">c</cell>
+		<cell input="true" solution="c">c</cell>
 		<cell input="false">4⊕b = </cell>
-		<cell input="true">f</cell>
+		<cell input="true" solution="f"></cell>
 	</row>
 	<row>
 		<cell input="false">Zeile2</cell>
