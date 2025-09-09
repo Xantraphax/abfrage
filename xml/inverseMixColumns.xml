@@ -1,0 +1,92 @@
+<root>
+	<row>
+		<cell input="false">Z.1</cell>
+		<cell input="false">Z.2</cell>
+		<cell input="false">Z.3</cell>
+		<cell input="false">Z.4</cell>
+		<cell input="false"></cell>
+		<cell input="false">2. Spa Alt</cell>
+		<cell input="false"></cell>
+		<cell input="false"></cell>
+		<cell input="false">XOR Z</cell>
+		<cell input="false"></cell>
+		<cell input="false"></cell>
+		<cell input="false"></cell>
+		<cell input="false">XOR</cell>
+		<cell input="false"></cell>
+		<cell input="false"></cell>
+		<cell input="false">2. Spa.Neu</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="false">0</cell>
+		<cell input="false">0</cell>
+		<cell input="false"> --></cell>
+		<cell input="true" solution="8"></cell>
+		<cell input="false">--></cell>
+		<cell input="false" ></cell>
+		<cell input="true" solution="1"></cell>
+		<cell input="false"></cell>
+		<cell input="false">--></cell>
+		<cell input="false"></cell>
+		<cell input="true" solution ="8"></cell>
+		<cell input="false"></cell>
+		<cell input="false">=</cell>
+		<cell input="true" solution "8"></cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="false">1</cell>
+		<cell input="false">1</cell>
+		<cell input="false"> --></cell>
+		<cell input="true" solution="4"></cell>
+		<cell input="false">--></cell>
+		<cell input="true" solution=""></cell>
+		<cell input="false">⊕</cell>
+		<cell input="true" solution=""></cell>
+		<cell input="false">--></cell>
+		<cell input="true"solution=""></cell>
+		<cell input="false">⊕</cell>
+		<cell input="true"solution=""></cell>
+		<cell input="false">=</cell>
+		<cell input="false">2. Spa.Neu</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="false">1</cell>
+		<cell input="false"> --></cell>
+		<cell input="true" solution="3"></cell>
+		<cell input="false">--></cell>
+		<cell input="true" solution=""></cell>
+		<cell input="false">⊕</cell>
+		<cell input="true" solution=""></cell>
+		<cell input="false">--></cell>
+		<cell input="true"solution=""></cell>
+		<cell input="false">⊕</cell>
+		<cell input="true"solution=""></cell>
+		<cell input="false">=</cell>
+		<cell input="false">2. Spa.Neu</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="false">0</cell>
+		<cell input="false">1</cell>
+		<cell input="false"> --></cell>
+		<cell input="true" solution="9"></cell>
+		<cell input="false">--></cell>
+		<cell input="true" solution=""></cell>
+		<cell input="false">⊕</cell>
+		<cell input="true" solution=""></cell>
+		<cell input="false">--></cell>
+		<cell input="true"solution=""></cell>
+		<cell input="false">⊕</cell>
+		<cell input="true"solution=""></cell>
+		<cell input="false">=</cell>
+		<cell input="false">2. Spa.Neu</cell>
+	</row>
+</root>
