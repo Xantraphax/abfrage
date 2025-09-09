@@ -1,0 +1,34 @@
+<root>
+	<row>
+		<cell input="false">Zeile0</cell>
+		<cell input="false">8 4 3 9 </cell>
+		<cell input="true" solution="8"></cell>
+		<cell input="true" solution="4"></cell>
+		<cell input="true" solution="3"></cell>
+		<cell input="true" solution="9"></cell>
+	</row>
+	<row>
+		<cell input="false">Zeile1</cell>
+		<cell input="false">a a f 4 </cell>
+		<cell input="true" solution="4"></cell>
+		<cell input="true" solution="a"></cell>
+		<cell input="true" solution="a"></cell>
+		<cell input="true" solution="f"></cell>
+	</row>
+	<row>
+		<cell input="false">Zeile2</cell>
+		<cell input="false">f 5 7 7 </cell>
+		<cell input="true" solution="7"></cell>
+		<cell input="true" solution="7"></cell>
+		<cell input="true" solution="f"></cell>
+		<cell input="true" solution="5"></cell>
+	</row>
+	<row>
+		<cell input="false">Zeile3</cell>
+		<cell input="false">4 0 b 8 </cell>
+		<cell input="true" solution="0"></cell>
+		<cell input="true" solution="b"></cell>
+		<cell input="true" solution="8"></cell>
+		<cell input="true" solution="4"></cell>
+	</row>
+</root>
