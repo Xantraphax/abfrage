@@ -1,92 +1,25 @@
-<root>
-	<row>
-		<cell input="false">Z.1</cell>
-		<cell input="false">Z.2</cell>
-		<cell input="false">Z.3</cell>
-		<cell input="false">Z.4</cell>
-		<cell input="false"></cell>
-		<cell input="false">2. Spa Alt</cell>
-		<cell input="false"></cell>
-		<cell input="false"></cell>
-		<cell input="false">XOR Z</cell>
-		<cell input="false"></cell>
-		<cell input="false"></cell>
-		<cell input="false"></cell>
-		<cell input="false">XOR</cell>
-		<cell input="false"></cell>
-		<cell input="false"></cell>
-		<cell input="false">2. Spa.Neu</cell>
-	</row>
-	<row>
-		<cell input="false">1</cell>
-		<cell input="false">0</cell>
-		<cell input="false">0</cell>
-		<cell input="false">0</cell>
-		<cell input="false"> ></cell>
-		<cell input="true" solution="8"></cell>
-		<cell input="false">></cell>
-		<cell input="false" ></cell>
-		<cell input="true" solution="1"></cell>
-		<cell input="false"></cell>
-		<cell input="false">></cell>
-		<cell input="false"></cell>
-		<cell input="true" solution ="8"></cell>
-		<cell input="false"></cell>
-		<cell input="false">=</cell>
-		<cell input="true" solution = "8"></cell>
-	</row>
-	<row>
-		<cell input="false">1</cell>
-		<cell input="false">0</cell>
-		<cell input="false">1</cell>
-		<cell input="false">1</cell>
-		<cell input="false"> ></cell>
-		<cell input="true" solution="4"></cell>
-		<cell input="false">></cell>
-		<cell input="true" solution=""></cell>
-		<cell input="false">⊕</cell>
-		<cell input="true" solution=""></cell>
-		<cell input="false">></cell>
-		<cell input="true"solution=""></cell>
-		<cell input="false">⊕</cell>
-		<cell input="true"solution=""></cell>
-		<cell input="false">=</cell>
-		<cell input="false">2. Spa.Neu</cell>
-	</row>
-	<row>
-		<cell input="false">1</cell>
-		<cell input="false">1</cell>
-		<cell input="false">0</cell>
-		<cell input="false">1</cell>
-		<cell input="false"> ></cell>
-		<cell input="true" solution="3"></cell>
-		<cell input="false">></cell>
-		<cell input="true" solution=""></cell>
-		<cell input="false">⊕</cell>
-		<cell input="true" solution=""></cell>
-		<cell input="false">></cell>
-		<cell input="true"solution=""></cell>
-		<cell input="false">⊕</cell>
-		<cell input="true"solution=""></cell>
-		<cell input="false">=</cell>
-		<cell input="false">2. Spa.Neu</cell>
-	</row>
-	<row>
-		<cell input="false">1</cell>
-		<cell input="false">0</cell>
-		<cell input="false">0</cell>
-		<cell input="false">1</cell>
-		<cell input="false"> ></cell>
-		<cell input="true" solution="9"></cell>
-		<cell input="false">></cell>
-		<cell input="true" solution=""></cell>
-		<cell input="false">⊕</cell>
-		<cell input="true" solution=""></cell>
-		<cell input="false">></cell>
-		<cell input="true"solution=""></cell>
-		<cell input="false">⊕</cell>
-		<cell input="true"solution=""></cell>
-		<cell input="false">=</cell>
-		<cell input="false">2. Spa.Neu</cell>
-	</row>
-</root>
+<?xml version="1.0" encoding="UTF-8"?>
+<imageTask>
+  <image src="png/mixColumns.png" />
+  <field x="30.70%" y="5.81%" width="8.35%" height="3.83%" solution="8">
+
+  </field>
+  <field x="62.95%" y="10.05%" width="4.75%" height="3.94%" solution="4">
+
+  </field>
+  <field x="90.64%" y="31.14%" width="7.63%" height="4.06%" solution="4">
+
+  </field>
+  <field x="75.66%" y="56.54%" width="8.59%" height="3.71%" solution="3">
+
+  </field>
+  <field x="30.63%" y="65.06%" width="7.46%" height="3.46%" solution="4">
+
+  </field>
+  <field x="90.72%" y="86.26%" width="7.55%" height="3.83%" solution="4">
+
+  </field>
+  <field x="90.96%" y="94.40%" width="7.23%" height="3.94%" solution="8">
+
+  </field>
+</imageTask>
