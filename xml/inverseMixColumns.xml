@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <imageTask>
-  <image src="png/mixColumns.png" />
+  <image src="./png/mixColumns.png" />
   <field x="30.70%" y="5.81%" width="8.35%" height="3.83%" solution="8">
 
   </field>
