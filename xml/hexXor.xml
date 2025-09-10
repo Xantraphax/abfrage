@@ -1,0 +1,14 @@
+<root>
+	<row>
+		<cell input="false">3⊕2</cell>
+		<cell input="true" solution="1"></cell>
+	</row>
+	<row>
+		<cell input="false">a⊕a</cell>
+		<cell input="true" solution="0"></cell>
+	</row>
+	<row>
+		<cell input="false">d⊕3</cell>
+		<cell input="true" solution="e"></cell>
+	</row>
+</root>
