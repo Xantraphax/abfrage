@@ -17,7 +17,7 @@
 	</row>
 	<row>
 		<cell input="false">V2</cell>
-		<cell input="true" solution"0.6"/>
+		<cell input="true" solution= "0.6" />
 		<cell input="true" solution="0.7" />
 		<cell input="true" solution="0.7" />
 		<cell input="true" solution="0.7" />
