@@ -1,0 +1,42 @@
+<root>
+	<row>
+		<cell input="false"> </cell>
+		<cell input="false">w</cell>
+		<cell input="false">W</cell>
+		<cell input="false">m</cell>
+		<cell input="false">M</cell>
+		<cell input="false">f</cell>
+	</row>
+	<row>
+		<cell input="false">V1</cell>
+		<cell input="false"> 0.6</cell>
+		<cell input="false"> 0.7</cell>
+		<cell input="false"> 0.7</cell>
+		<cell input="false"> 0.7</cell>
+		<cell input="false"> 0.7</cell>
+	</row>
+	<row>
+		<cell input="false">V2</cell>
+		<cell input="true" solution"0.6"/>
+		<cell input="true" solution="0.7" />
+		<cell input="true" solution="0.7" />
+		<cell input="true" solution="0.7" />
+		<cell input="true" solution="0.7" />
+	</row>
+	<row>
+		<cell input="false">V1</cell>
+		<cell input="true" solution"0.6"/>
+		<cell input="true" solution="?" />
+		<cell input="true" solution="0.7" />
+		<cell input="true" solution="?" />
+		<cell input="true" solution="?" />
+	</row>
+	<row>
+		<cell input="false">V1</cell>
+		<cell input="true" solution"0.6"/>
+		<cell input="true" solution="0.6" />
+		<cell input="true" solution="0.7" />
+		<cell input="true" solution="0.7" />
+		<cell input="true" solution="?" />
+	</row>
+</root>
