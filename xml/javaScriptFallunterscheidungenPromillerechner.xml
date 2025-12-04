@@ -24,7 +24,7 @@
 		<cell input="true" solution="0.7" />
 	</row>
 	<row>
-		<cell input="false">V1</cell>
+		<cell input="false">V3</cell>
 		<cell input="true" solution="0.6" />
 		<cell input="true" solution="?" />
 		<cell input="true" solution="0.7" />
@@ -32,7 +32,7 @@
 		<cell input="true" solution="?" />
 	</row>
 	<row>
-		<cell input="false">V1</cell>
+		<cell input="false">V4</cell>
 		<cell input="true" solution="0.6" />
 		<cell input="true" solution="0.6" />
 		<cell input="true" solution="0.7" />
