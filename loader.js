@@ -45,6 +45,15 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("uploadSection").style.display = "block";
   }
 
+  // Backgroundcolor laden
+  const bgColor = getParam("bgColor"); // z. B. "#ffffff" oder "ffffff"
+  if (bgColor) {
+    // falls # fehlt, ergänzen
+    const color = bgColor.startsWith("#") ? bgColor : `#${bgColor}`;
+    document.body.style.backgroundColor = color;
+  }
+  
+
   const showHeadline = getParam("headline") === "true";
   const headlineText = getParam("headlineText");
   if (showHeadline) {
