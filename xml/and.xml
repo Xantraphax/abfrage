@@ -1,0 +1,27 @@
+<root>
+	<row>
+		<cell input="false">e1</cell>
+		<cell input="false">e2</cell>
+		<cell input="false">a</cell>
+	</row>
+	<row>
+		<cell input="false">0</cell>
+		<cell input="false">0</cell>
+		<cell input="true" solution="0" />
+	</row>
+	<row>
+		<cell input="false">0</cell>
+		<cell input="false">1</cell>
+		<cell input="true" solution="0" />
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="true" solution="0" />
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">1</cell>
+		<cell input="true" solution="1" />
+	</row>
+</root>
