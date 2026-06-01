@@ -2,8 +2,8 @@
 	<row>
 		<cell input="false">Bit (a)</cell>
 		<cell input="false">Bit (b)</cell>
-		<cell input="false">Summe (s)</cell>
-		<cell input="false">Übertrag (ü)</cell>
+		<cell input="false">Übertrag (ü))</cell>
+		<cell input="false">Summe (s</cell>
 	</row>
 	<row>
 		<cell input="false">0</cell>
@@ -13,20 +13,20 @@
 	</row>
 	<row>
 		<cell input="false">0</cell>
-		<cell input="false">1</cell>
-		<cell input="true">1</cell>
-		<cell input="true">0</cell>
-	</row>
-	<row>
-		<cell input="false">1</cell>
-		<cell input="false">0</cell>
-		<cell input="true">1</cell>
-		<cell input="true">0</cell>
-	</row>
-	<row>
-		<cell input="false">1</cell>
 		<cell input="false">1</cell>
 		<cell input="true">0</cell>
 		<cell input="true">1</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">0</cell>
+		<cell input="true">0</cell>
+		<cell input="true">1</cell>
+	</row>
+	<row>
+		<cell input="false">1</cell>
+		<cell input="false">1</cell>
+		<cell input="true">1</cell>
+		<cell input="true">0</cell>
 	</row>
 </root>
